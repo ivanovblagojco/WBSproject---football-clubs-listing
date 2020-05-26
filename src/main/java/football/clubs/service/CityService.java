@@ -10,7 +10,7 @@ public interface CityService {
     public City save(City city);
     public List<City> findAll();
     public Optional<City> findById(Long id);
-    public Optional<City> findCityByName(String Name);
+    public Optional<City> findByCityName(String Name);
     public City getCityDetailsByLink(String cityLink);
     public City getCityDetailsByName(String Name);
 }

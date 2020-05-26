@@ -10,7 +10,7 @@ public interface CountryService {
     public Country save(Country country);
     public List<Country> findAll();
     public Optional<Country> findById(Long id);
-    public Optional<Country> findCountryByName(String Name);
+    public Optional<Country> findByCountryName(String Name);
     public Country getCountryDetailsByLink(String countryLink);
     public Country getCountryDetailsByName(String Name);
 }
