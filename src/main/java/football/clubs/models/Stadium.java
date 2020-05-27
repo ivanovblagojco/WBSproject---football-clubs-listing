@@ -10,13 +10,14 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class City {
+public class Stadium {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String cityName;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private Country country;
-    private Long population;
+    private String description;
+    private int yearOfConstruction;
+    private int yearOfOpening;
+    private int capacity;
+    private String place;
 
 }

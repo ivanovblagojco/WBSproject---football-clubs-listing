@@ -1,5 +1,6 @@
 package football.clubs.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,8 +16,9 @@ public class Club {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String clubName;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private Country country;
+    private String description;
+    private String chairman;
     private String manager;
+    private String stadium;
     private String league;
 }
