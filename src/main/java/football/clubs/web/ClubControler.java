@@ -1,8 +1,8 @@
 package football.clubs.web;
 
-import football.clubs.models.City;
+
 import football.clubs.models.Club;
-import football.clubs.models.exceptions.CityException;
+
 import football.clubs.models.exceptions.ClubException;
 import football.clubs.service.ClubService;
 import org.springframework.beans.factory.annotation.Autowired;
