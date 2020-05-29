@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,11 +15,12 @@ import javax.persistence.*;
 public class Club {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String clubName;
     private String description;
     private String chairman;
     private String manager;
-    private String stadium;
-    private String league;
+    @OneToOne
+    private Stadium stadium;
+    private String championsof;
 }

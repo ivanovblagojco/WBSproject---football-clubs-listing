@@ -26,7 +26,7 @@ public class StadiumServiceImpl implements StadiumService {
     }
 
     @Override
-    public Optional<Stadium> findById(Long id) {
+    public Optional<Stadium> findById(Integer id) {
         return stadiumRepository.findById(id);
     }
 

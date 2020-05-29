@@ -28,17 +28,8 @@ public class ClubControler {
     }
 
     @GetMapping("/{clubId}")
-    public Club getById(@PathVariable Long clubId){
+    public Club getById(@PathVariable Integer clubId){
         return clubService.findById(clubId).orElseThrow(ClubException::new);
     }
 
-    @GetMapping("/{clubName}")
-    public Club getByName(@PathVariable String clubName){
-        return clubService.findByClubName(clubName).orElseThrow(ClubException::new);
-    }
-
-    @GetMapping("/details")
-    public Club getClubDetails(@RequestParam String clubLink){
-        return clubService.getClubDetailsByLink(clubLink);
-    }
 }

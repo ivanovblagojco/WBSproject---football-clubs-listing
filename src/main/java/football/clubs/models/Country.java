@@ -15,10 +15,8 @@ public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String countryName;
-    private String capitalCity;
-    private String officialLanguage;
     @OneToMany
     private List<Club> clubs;
 }

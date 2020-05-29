@@ -26,7 +26,7 @@ public class ClubServiceImpl implements ClubService {
     }
 
     @Override
-    public Optional<Club> findById(Long id) {
+    public Optional<Club> findById(Integer id) {
         return clubRepository.findById(id);
     }
 

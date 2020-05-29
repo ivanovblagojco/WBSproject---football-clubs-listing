@@ -27,17 +27,9 @@ public class CountryControler {
     }
 
     @GetMapping("/{countryId}")
-    public Country getById(@PathVariable Long countryId){
+    public Country getById(@PathVariable Integer countryId){
         return countryService.findById(countryId).orElseThrow(CountryException::new);
     }
 
-    @GetMapping("/{countryName}")
-    public Country getByName(@PathVariable String countryName){
-        return countryService.findByCountryName(countryName).orElseThrow(CountryException::new);
-    }
 
-    @GetMapping("/details")
-    public Country getCountryDetails(@RequestParam String countryLink){
-        return countryService.getCountryDetailsByLink(countryLink);
-    }
 }

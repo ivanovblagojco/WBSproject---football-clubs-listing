@@ -27,12 +27,9 @@ public class StadiumControler {
     }
 
     @GetMapping("/{stadiumId}")
-    public Stadium getById(@PathVariable Long stadiumId){
+    public Stadium getById(@PathVariable Integer stadiumId){
         return stadiumService.findById(stadiumId).orElseThrow(StatidumException::new);
     }
 
-    @GetMapping("/details")
-    public Stadium getStadiumDetails(@RequestParam String stadiumLink){
-        return stadiumService.getStadiumDetailsByLink(stadiumLink);
-    }
+
 }

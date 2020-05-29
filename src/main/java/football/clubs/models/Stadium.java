@@ -13,11 +13,12 @@ import javax.persistence.*;
 public class Stadium {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
+    private String name;
     private String description;
-    private int yearOfConstruction;
-    private int yearOfOpening;
-    private int capacity;
+    private String yearOfConstruction;
+    private String yearOfOpening;
+    private String capacity;
     private String place;
 
 }
