@@ -68,12 +68,13 @@ public class DataHolder {
                         "PREFIX dbo: <http://dbpedia.org/ontology/> " +
                         "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
                         "PREFIX db: <http://dbpedia.org/resource/>" +
+                        "PREFIX dbp:  <http://dbpedia.org/property/>" +
                         "SELECT ?abstract ?chairman ?manager ?ground ?champions WHERE { " +
-                        "db:" + club + "dbo:abstract ?abstract." +
-                        "db:" + club + "dbo:chairman ?chairman." +
-                        "db:" + club + "dbo:manager ?manager." +
-                        "db:" + club + "dbo:ground ?ground." +
-                        "db:" + club + "^dbp:champions ?champions." +
+                        "db:" + club + " dbo:abstract ?abstract." +
+                        "db:" + club + " dbo:chairman ?chairman." +
+                        "db:" + club + " dbo:manager ?manager." +
+                        "db:" + club + " dbo:ground ?ground." +
+                        "db:" + club + " ^dbp:champions ?champions." +
                         "}";
         Club newClub = new Club();
         Query sparqlQuery = QueryFactory.create(query);
@@ -97,12 +98,13 @@ public class DataHolder {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
                         "PREFIX dbo: <http://dbpedia.org/ontology/> " +
                         "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
+                        "PREFIX dbp:  <http://dbpedia.org/property/>" +
                         "SELECT ?abstract ?buildingStartDate ?opened ?seatingCapacity ?location WHERE { " +
-                        "db:" + stadium + "dbo:abstract ?abstract." +
-                        "db:" + stadium + "dbo:buildingStartDate ?buildingStartDate." +
-                        "db:" + stadium + "dbp:opened ?opened." +
-                        "db:" + stadium + "dbp:seatingCapacity ?seatingCapacity." +
-                        "db:" + stadium + "dbo:location ?location." +
+                        "db:" + stadium + " dbo:abstract ?abstract." +
+                        "db:" + stadium + " dbo:buildingStartDate ?buildingStartDate." +
+                        "db:" + stadium + " dbp:opened ?opened." +
+                        "db:" + stadium + " dbp:seatingCapacity ?seatingCapacity." +
+                        "db:" + stadium + " dbo:location ?location." +
                         "}";
         Stadium newStadium = new Stadium();
         Query sparqlQuery = QueryFactory.create(query);
@@ -153,8 +155,8 @@ public class DataHolder {
 
 
         //TODO: call your functions here :)) :D
-        List<String> country = this.getAllClubs("Italy");
-        // Club club = this.getClubDetails("/S.S._Lazio");
+        //List<String> country = this.getAllClubs("Italy");
+        Club club = this.getClubDetails("S.S._Lazio");
 
 
     }
