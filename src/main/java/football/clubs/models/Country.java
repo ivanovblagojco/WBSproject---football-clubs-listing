@@ -17,6 +17,6 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String countryName;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Club> clubs;
 }

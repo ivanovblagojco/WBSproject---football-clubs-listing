@@ -17,10 +17,11 @@ public class Club {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String clubName;
+    @Lob
     private String description;
     private String chairman;
     private String manager;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Stadium stadium;
     private String championsof;
 }
