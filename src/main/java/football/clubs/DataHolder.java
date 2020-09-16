@@ -49,7 +49,7 @@ public class DataHolder {
                         "SELECT distinct ?club WHERE { " +
                         "db:Category:Football_clubs_in_" + coutry + " ^dct:subject ?club. " +
                         "}" +
-                        "Limit 50";
+                        "Limit 150";
 
         Query sparqlQuery = QueryFactory.create(query);
         try (QueryExecution queryExecution = QueryExecutionFactory.sparqlService(SPARQLEndpoint, sparqlQuery)) {
@@ -274,7 +274,7 @@ public class DataHolder {
         }
 
         for (Club club : clubsSpain) {
-            if (club.getStadium() != null && !club.getStadium().getName().contains(",") && !club.getStadium().getName().contains("'")) {
+            if (club.getStadium() != null && !club.getStadium().getName().contains(",") && !club.getStadium().getName().contains("'") && !club.getStadium().getName().contains(")")) {
                 this.getStadiumDetails(club.getStadium().getName(), "Spain");
                 if (club.getStadium() != null) {
                     stadiumRepository.save(club.getStadium());
@@ -291,7 +291,10 @@ public class DataHolder {
             }
         }
         for (Club club : clubsEngland) {
-            if (club.getStadium() != null && !club.getStadium().getName().contains(",") && !club.getStadium().getName().contains("'") && !club.getStadium().getName().contains(")")) {
+            if (club.getStadium() != null && !club.getStadium().getName().contains(",")
+                    && !club.getStadium().getName().contains("=")
+                    && !club.getStadium().getName().contains(")")
+                    && !club.getStadium().getName().contains("_")) {
                 this.getStadiumDetails(club.getStadium().getName(), "England");
                 if (club.getStadium() != null) {
                     stadiumRepository.save(club.getStadium());
